@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Raleway:wght@400;500;700&display=swap');
+
+:root {
+    --sans-serif-font: 'Lato';
+    --serif-font: 'Merriweather';
+
+    --heading-font: 'Raleway';
+
+    --primary-color: #3075ca;
+    --dark-primary-color: #2b6ec0;
+    --darker-primary-color: #2260ac;
+    --secondary-color: #2f3741;
+    --dark-secondary-color: #2a323b;
+
+    --dark-color: #1c1d1f;
+    --light-color: #f1f4f8;
+    --faded-color: #becfe5;
+
+    --shadow: .1em .1em .4em rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--serif-font), serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font), sans-serif;
+    font-weight: 700;
+}
+
+.wrapper {  
+    width: 100%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+header {
+    display: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 1.5em;
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+
+header .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    text-shadow: var(--shadow);
+}
+
+nav.main {
+    display: flex;
+    font-family: var(--sans-serif-font), sans-serif;
+}
+
+nav.main a {
+    display: block;
+    position: relative;
+    font-size: .95rem;
+    padding: .85em 1.05em .85em 2.25em;
+    color: var(--light-color);
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s background-color;
+}
+
+nav.main a.no-icon {
+    padding: .85em 1.05em;
+}
+
+nav.main a:not(.no-icon) i {
+    font-size: .8rem;
+    position: absolute;
+    top: 50%;
+    left: 1.4em;
+    transform: translate(-50%, -50%);
+}
+
+nav.main a:hover {
+    background-color: var(--dark-primary-color);
+}
+
+nav.main a.active {
+    background-color: var(--darker-primary-color);
+}
+
+@keyframes growDown {
+    0% {
+        transform: perspective(200px) rotateX(-45deg);
+    }
+    75% {
+        transform: perspective(200px) rotateX(15deg);
+    }
+    100% {
+        transform: perspective(200px) rotateX(0deg);
+    }
+}
+
+nav.utility {
+    font-family: var(--sans-serif-font), sans-serif;
+    font-size: .9rem;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    transform-origin: top;
+    border-radius: 0 0 .3em .3em;
+    overflow: hidden;
+}
+
+nav.utility.show {
+    display: flex;
+    animation: growDown 0.15s linear;
+}
+
+nav.utility a {
+    position: relative;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: .85em 1.15em .85em 2.5em;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s background-color;
+}
+
+nav.utility a.active {
+    background-color: var(--dark-secondary-color);
+}
+
+nav.utility a:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+nav.utility a i {
+    font-size: .8rem;
+    position: absolute;
+    top: 50%;
+    left: 1.5em;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+    margin-top: auto;
+    font-size: .75rem;
+    opacity: .7;
+    padding: .6em;
+    text-align: center;
+}
+
+/** ripples **/
+
+@keyframes ripple {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple .3s linear;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/** loading animation effect https://codepen.io/kumarsidharth/pen/VBBbJW **/
+
+.loading {
+    font-family: var(--serif-font), serif;
+    font-size: .9rem;
+    margin: 5em 1em;
+}
+
+@keyframes load {
+    0%{
+        opacity: 0.08;
+/*         font-size: 10px; */
+/* 				font-weight: 400; */
+        filter: blur(5px);
+        letter-spacing: 3px;
+    }
+    100%{
+/*         opacity: 1; */
+/*         font-size: 12px; */
+/* 				font-weight:600; */
+/* 				filter: blur(0); */
+        }
+}
+
+.animate {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
+	margin: auto;
+/* 	width: 350px; */
+/* 	font-size:26px; */
+	animation: load 1.2s infinite 0s ease-in-out;
+	animation-direction: alternate;
+	text-shadow: 0 0 1px white;
+}
+
+/** misc tags for element styling **/
+
+.color-primary {
+    color: var(--primary-color);
+}
+
+.color-secondary {
+    color: var(--secondary-color);
+}
+
+.color-dark {
+    color: var(--dark-color);
+}
+
+.color-light {
+    color: var(--light-color);
+}
+
+.color-faded {
+    color: var(--faded-color);
+}
+
+.weight-400 {
+    font-weight: 400;
+}
