@@ -36,4 +36,10 @@ $(function() {
         $("nav.utility").toggleClass("show");
         return false;
     });
+
+    // handle refreshing on a non / URL.
+
+    let path = window.location.pathname;
+
+    $(`a[href="${path}"]`).addClass("active");
 });

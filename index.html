@@ -7,6 +7,8 @@
     <title>MinecraftServer Pro - MC Server List</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/forms.css">
+    <link rel="stylesheet" href="/assets/css/server.css">
 </head>
 <body>
     <header>
@@ -35,15 +37,38 @@
                     <small>We're currently showing you top servers on <a href="/">minecraftserver.pro</a>.</small>
                 </div>
                 
+                <form id="server-directory">
+                    <div class="search-bar"><input type="search" name="search" id="server-directory--search" placeholder="Search Minecraft servers..."><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+
+                    <div class="view-type">
+                        <label>
+                            <div class="selected-circle"></div>
+                            <div class="hover" for="card-view">Card View</div>
+                            <div class="icon"><i class="fa-solid fa-rectangle-history"></i></div>
+                            <input type="radio" name="view" id="card-view" value="card" checked="checked" />
+                        </label>
+                        <label>
+                            <div class="selected-circle"></div>
+                            <div class="hover" for="list-view">List View</div>
+                            <div class="icon"><i class="fa-solid fa-list"></i></div>
+                            <input type="radio" name="view" id="list-view" value="list" />
+                        </label>
+                    </div>
+                </form>
+
+                <div id="server-directory-results" class="server-flex-list card">
+                    <div class="loading animate">We're loading the best servers, just for you!</div>
+                </div>
             </article>
-            <div class="loading animate">We're loading the best servers, just for you!</div>
         </main>
     </div>
 
-    <footer>Copyright 2022 &copy; MinecraftServer.Pro - MSPro is not affiliated with or endorsed by Mojang, AB.</footer>
+    <footer>Copyright 2022 &copy; MinecraftServer.Pro - MinecraftServer.Pro is not affiliated with or endorsed by Mojang, AB.</footer>
     
     <script src="/assets/js/jquery.js"> </script>
+    <script src="/assets/js/api.js"></script>
     <script src="https://kit.fontawesome.com/33d141f1e3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/navigation.js"> </script>
+    <script src="/assets/js/displayServers.js"> </script>
 </body>
 </html>

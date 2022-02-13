@@ -9,14 +9,15 @@
     --primary-color: #3075ca;
     --dark-primary-color: #2b6ec0;
     --darker-primary-color: #2260ac;
-    --secondary-color: #2f3741;
-    --dark-secondary-color: #2a323b;
+    --secondary-color: #445161;
+    --dark-secondary-color: #3c4958;
+    --darker-secondary-color: #28333f;
 
     --dark-color: #1c1d1f;
     --light-color: #f1f4f8;
     --faded-color: #becfe5;
 
-    --shadow: .1em .1em .4em rgba(0,0,0,0.2);
+    --shadow: .1em .1em .5em rgba(0,0,0,0.15);
 }
 
 * {
@@ -45,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {  
-    width: 100%;
+    width: calc(100% - 3em);
     max-width: 65em;
     margin: 0 auto;
 }
@@ -61,6 +62,7 @@ header {
 }
 
 header .wrapper {
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -162,6 +164,16 @@ nav.utility a i {
     top: 50%;
     left: 1.5em;
     transform: translate(-50%, -50%);
+}
+
+.article-head {
+    margin: 2em 0 1em 0;
+}
+
+.article-head h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: .25em;
 }
 
 footer {

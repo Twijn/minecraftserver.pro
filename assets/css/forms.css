@@ -1,0 +1,110 @@
+/* search bar styles */
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    max-width: 20em;
+    box-shadow: var(--shadow);
+    border-radius: 3em;
+    overflow: hidden;
+}
+
+.search-bar input[type=search] {
+    width: calc(100% - 3em);
+    display: block;
+    padding: .5em 1.25em;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    position: relative;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 1.5em;
+    margin: .25em;
+}
+
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.view-type {
+    display: flex;
+}
+
+.view-type > label {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 1em;
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+    margin: 0 .25em;
+    transition: 0.3s background-color;
+}
+
+.view-type input {
+    position: absolute;
+    top: -.1em;
+    left: -.1em;
+}
+
+.view-type i {
+    color: var(--light-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    
+}
+
+.view-type .hover {
+    position: absolute;
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    font-size: .8rem;
+    color: #fff;
+    background-color: var(--darker-secondary-color);
+    box-shadow: var(--shadow);
+    padding: 0;
+    border-radius: .3em;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s opacity, 0.3s top;
+}
+
+input:checked ~ .selected {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.view-type label:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+.view-type label:hover .hover {
+    height: auto;
+    padding: .3em .5em;
+    top: -2em;
+    opacity: 1;
+}
+
+#server-directory {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
